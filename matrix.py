@@ -9,6 +9,21 @@ z0  z1  ... zn
 """
 import math
 
+
+def make_bezier():
+    pass
+
+def make_hermite():
+    return [[2, -3, 0, 1],[-2, 3, 0, 0],[1, -2, 1, 0],[1, -1, 0, 0]]
+
+def generate_curve_coefs( p0, p1, p2, p3, t ): #0 = hermite, 1 = bezier
+    m = [p0, p1, p2, p3]
+    if (t==0): matrix_mult(make_hermite(), m)
+    if (t==1): matrix_mult(make_bezier(), m)
+    return m
+
+
+
 def make_translate( x, y, z ):
     return [[1, 0, 0, 0],[0, 1, 0, 0],[0, 0, 1, 0],[x, y, z, 1]]
 
