@@ -3,10 +3,27 @@ from matrix import *
 
 
 def add_circle( points, cx, cy, cz, r, step ):
-    pass
-
+    t = 0
+    while (t <= 1.0):
+        X = cx + r * math.cos(2 * math.pi * t)
+        Y = cy + r * math.sin(2 * math.pi * t)
+        add_point(points, X, Y)
+        t+= step
+    
+    
+#0 = hermite, 1 = bezier
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-    pass
+    coefX = generate_curve_coefs( x0, x1, x2, x3, curve_type )
+    coefY = generate_curve_coefs( y0, y1, y2, y3, curve_type )
+    t = 0.0
+    X = x0
+    Y = y0
+    while (t <= 1.0):
+        add_point(points, X, Y)
+        X = coefX[0][3] + t * (coefX[0][2] + t * (coefX[0][1] + t*coefX[0][0]))
+        Y = coefY[0][3] + t * (coefY[0][2] + t * (coefY[0][1] + t*coefY[0][0]))
+        
+        t += step
 
 
 def draw_lines( matrix, screen, color ):
