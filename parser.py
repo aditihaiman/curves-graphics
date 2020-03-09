@@ -58,6 +58,16 @@ def parse_file( fname, pofloats, transform, screen, color ):
         
         elif(line[0] == 'apply'):
             matrix_mult(transform, pofloats)
+            
+        elif(line[0] == 'bezier'):
+            add_curve(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), float(line2[5]), float(line2[6]), float(line2[7]), STEP, 1)
+            
+        elif(line[0] == 'hermite'):
+            add_curve(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), float(line2[5]), float(line2[6]), float(line2[7]), STEP, 0)
+        
+        elif(line[0] == 'circle'):
+            add_circle(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), STEP)
+
         
         elif(line[0] == 'display'):
             clear_screen(screen)
