@@ -10,7 +10,7 @@ GREEN = 1
 BLUE = 2
 STEP = 0.001
 
-DEFAULT_COLOR = [255, 255, 255]
+DEFAULT_COLOR = [255, 0, 0]
 
 def new_screen( width = XRES, height = YRES ):
     screen = []
