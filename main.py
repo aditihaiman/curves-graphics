@@ -39,7 +39,7 @@ transform = [[1, 0, 0, 0],
 #matrix_mult(transform, edges)
 #draw_lines(edges, screen, color)
 
-parse_file("script2", edges, transform, screen, color)
+parse_file("script", edges, transform, screen, color)
 
 
 #display(screen)
