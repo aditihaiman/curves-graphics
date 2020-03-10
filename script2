@@ -1,3 +1,4 @@
+
 #glasses
 bezier
 205 264 204 185 284 185 284 262
@@ -6,6 +7,12 @@ bezier
 line
 205 264 1 424 262 1
 
+scale
+0.5 0.5 1
+move
+80 -50 0 
+apply
+ident
 
 #face
 bezier
@@ -38,15 +45,42 @@ bezier
 circle
 110 330 0 10
 circle
+110 330 0 7
+circle
+110 330 0 5
+circle
+110 330 0 2
+circle
 144 330 0 10
+circle
+144 330 0 7
+circle
+144 330 0 5
+circle
+144 330 0 2
 
+#horn1
+bezier
+101 408 102 388 100 372 111 361
+circle
+101 408 0 10
 
+#horn2
+bezier
+151 408 150 388 152 372 141 361
+circle
+151 408 0 10
 
 #neck
 line
 105 310 0 90 100 0
 line
 151 310 0 166 100 0
+
+ident
+move
+100 0 0
+apply
 
 display
 save
